@@ -16,6 +16,7 @@ pkg_deps=(
   core/glibc
   core/ncurses
   core/perl
+  core/gawk
 )
 pkg_build_deps=(
   core/patch
