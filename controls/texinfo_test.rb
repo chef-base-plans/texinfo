@@ -62,13 +62,6 @@ control 'core-plans-texinfo' do
     its('exit_status') { should eq 0 }
   end
 
-  describe command("#{File.join(texinfo_pkg_ident, 'bin', 'texindex')} --version") do
-    its('stdout') { should be_empty }
-    its('stderr') { should_not be_empty }
-    its('stderr') { should match /texi2any \(GNU texinfo\) #{version_string}/ }
-    its('exit_status') { should eq 127 }
-  end
-  
   describe command("#{File.join(texinfo_pkg_ident, 'bin', 'pod2texi')} --version") do
     its('stdout') { should_not be_empty }
     its('stdout') { should match /pod2texi [0-9]+\.[0-9]+/ }
